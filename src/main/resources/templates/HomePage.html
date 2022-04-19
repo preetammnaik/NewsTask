@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>News App</title>
+</head>
+<body>
+<div align="center">
+
+  <div sec:authorize="isAuthenticated()">
+   <h2>Welcome</h2>  <b><span sec:authentication="name"><h3>Username</h3></span></b> &nbsp;
+    <i><span sec:authentication="principal.authorities"><h3>Roles</h3></span></i>
+      <form th:action="@{/logout}" method="post">
+          <input type="submit" value="Logout" />
+      </form>
+  </div>
+
+
+<div>
+</div>
+    <div class="container text-center">
+        <h3><a th:href="@{/index}">List All News</a></h3>
+        <h3><a th:href="@{/users}">List of Users</a></h3>
+    </div>
+
+</div>
+</body>
+</html>

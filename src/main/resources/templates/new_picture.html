@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/addPictures}" th:object="${picture}"
+      method="post" enctype="multipart/form-data">
+    <table border="0" cellpadding="10">
+        <tr>
+            <td>News ID:</td>
+            <td><input name="newsID" id="newsID" type="text" th:field="*{newsID}" /></td>
+        </tr>
+
+        <tr>
+            <td>Picture Name:</td>
+            <td><input name="pictureName" id="name" type="text" th:field="*{pictureName}" /></td>
+        </tr>
+        <tr>
+            <td>Picture Data:</td>
+            <td><input name="pictureData"  id="customfile" type="file" th:field="*{pictureData}" /></td>
+        </tr>
+        <tr>
+            <td>Meta Data:</td>
+            <td><input name="metadata" id="metadata" type="text" th:field="*{metadata}" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="submit">Save</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

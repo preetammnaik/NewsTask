@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>New News</title>
+</head>
+<body>
+<div align="center">
+    <h1>New News</h1>
+    <br />
+    <form action="#" th:action="@{/save}" th:object="${news}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" th:field="*{title}" /></td>
+            </tr>
+            <tr>
+                <td>Text:</td>
+                <td><input type="text" th:field="*{text}" /></td>
+            </tr>
+            <tr>
+                <td>Creation Date:</td>
+                <td><input type="date" th:field="*{creation_date}" /></td>
+            </tr>
+            <tr>
+                <td>Valid From:</td>
+                <td><input type="date" th:field="*{valid_from}" /></td>
+            </tr>
+            <tr>
+                <td>Valid To:</td>
+                <td><input type="date" th:field="*{valid_to}" /></td>
+            </tr>
+            <tr>
+                <td>Role:</td>
+                <td><input type="text" th:field="*{role}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button></td>
+            </tr>
+        </table>
+    </form>
+
+
+</div>
+</body>
+</html>
